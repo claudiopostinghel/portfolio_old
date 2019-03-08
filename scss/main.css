@@ -1,0 +1,86 @@
+/* Coolors Exported Palette - coolors.co/000000-14213d-efc02e-e5e5e5-ffffff */
+/* HSL */
+/* RGB */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  width: 100vw;
+  background-color: white;
+}
+
+#mewrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#mewrap #preprofilepictures {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #d3d3d3;
+}
+
+#mewrap #postprofilepictures {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#mewrap #profilepictures {
+  background-image: linear-gradient(-4deg, #fff 0%, #fff 50%, lightgray 50%, lightgray 100%);
+  text-align: center;
+}
+
+#mewrap #profilepictures #picture {
+  margin: 0 auto;
+  max-height: 150px;
+  max-width: 150px;
+  height: 45vw;
+  width: 45vw;
+  border: 3px solid white;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+}
+
+#mewrap #title {
+  text-align: left;
+  max-width: 90vw;
+  font-size: 3rem;
+  margin: 0 auto;
+}
+
+#mewrap #socialwrap {
+  display: block;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 3em auto;
+  padding: 0 15vw;
+}
+
+#mewrap #socialwrap .social {
+  margin: 1em;
+  height: 3em;
+  opacity: 0.7;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,67 @@
+// compileCompressed: $1.min.css
+@import 'variables';
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   border: none;//1px dotted red;
+}
+
+html {
+   width: 100vw;
+   background-color: $backgroundcolor;
+}
+
+#mewrap {
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   
+   width: 100vw;
+   height: 100vh;
+
+   flex-grow: 1;
+   #preprofilepictures {
+      flex-grow: 1;
+      background-color: #d3d3d3;
+   }
+   #postprofilepictures {
+      flex-grow: 1;
+   }
+   #profilepictures {
+      background-image: linear-gradient(-4deg, #fff 0%, #fff 50%, lightgray 50%, lightgray 100%);
+      text-align: center;
+      #picture {
+         margin: 0 auto; // center
+      
+         max-height: 150px;
+         max-width: 150px;
+         height: 45vw;
+         width: 45vw;
+
+         // pre-movingface
+         border: 3px solid white;
+         background-color: rgb(231, 231, 231);
+         border-radius: 50%;
+      }
+   }
+   #title {
+      text-align: left;
+      max-width: 90vw;
+      font-size: 3rem;
+      margin: 0 auto;
+   }
+   #socialwrap {
+      display: block;
+      justify-content: space-between;
+      margin: 3em auto;
+      padding: 0 15vw;
+      .social {
+         margin: 1em;
+         height: 3em;
+         opacity: 0.7;
+         border: 1px solid red;
+      }
+   }
+}
