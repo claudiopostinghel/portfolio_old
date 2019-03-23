@@ -2,6 +2,7 @@
 @import 'variables';
 
 * {
+   -webkit-backface-visibility: hidden;
    box-sizing: border-box;
    margin: 0;
    padding: 0;
@@ -10,6 +11,11 @@
 
 *::selection {
    background-color: rgba($color: gold, $alpha: 0.8);
+}
+
+*::-webkit-scrollbar {
+   width: 0 !important;
+   height: 0 !important;
 }
 
 html {
@@ -30,11 +36,8 @@ body {
 }
 
 #fakebody {
-   padding-top: 10em;
-   width: 95vw;
-   max-width: 1000px;
+   max-width: 100vw;
    margin: 0 auto;
-   // background-color: white;
 }
 @media only screen and (min-width: 600px) and (max-width: 999px)  {
    #fakebody {
@@ -172,6 +175,8 @@ body {
          align-items: stretch;
          padding: 0;
 
+         overflow: hidden;
+
          transform: translateX(0);
       }
    }
@@ -180,8 +185,7 @@ body {
 .project {
    border: 1px solid white;
    background-color: gold;
-   margin: 0 0.5em 0.5em 0;
-   padding: 1em;
+   margin: 0 0 0.5em 0;
 
    flex-basis: 0;
    flex-grow: 1;
@@ -190,33 +194,59 @@ body {
    height: 300px;
    display: inline-flex;
    flex-direction: column;
-   justify-content: flex-end;
+   overflow: hidden;
 
-   // box-shadow: inset 0 0px 30px rgba(0,0,0,0.5);
+   .page[page="2"] {
+      max-height: 0;
+      overflow: hidden;
+      background-color: red;
+   }
 
-   h3 {
-      font-weight: 900;
-      font-size: 3em;
-      display: block;
-      text-align: right;
+   .page {
+      position: relative;
       margin: 0;
-   }
-   .tags {
+      height: 100%;
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      flex-wrap: wrap;
 
-      .tag {
-         font-size: 0.9em;
-         background-color: gray;
-         color: white;
-         border-radius: 1em;
-         margin-left: 0.5em;
-         padding: 0.2em 0.5em;
+      .mockup {
+         height: 100%;
+         display: flex;
+         align-items: center;
+         // background-color: rgba($color: red, $alpha: 0.3);
       }
+
+      .title {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         h3 {
+            font-weight: 900;
+            font-size: 3em;
+            display: block;
+            text-align: right;
+            margin: 0;
+         }
+         .tags {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+      
+            .tag {
+               font-size: 0.9em;
+               background-color: gray;
+               color: white;
+               border-radius: 1em;
+               margin-left: 0.5em;
+               padding: 0.2em 0.5em;
+            }
+         }
+      }
+
    }
+
+
    transition:
    width 0.7s cubic-bezier(.25,.8,.25,1),
    height 0.7s cubic-bezier(.25,.8,.25,1),
@@ -290,10 +320,24 @@ body {
 }
 
 #cloned {
+       /* Force Hardware Acceleration in WebKit */
+       -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+       -ms-transform: translateZ(0);
+       -o-transform: translateZ(0);
+       transform: translateZ(0);
+       -webkit-backface-visibility: hidden;
+       backface-visibility: hidden;
+       /* ------------------------------------- */
+       
    position: fixed;
+   display: inline-block;
    top: 0;
    left: 0;
-   background-color: rgba($color: gold, $alpha: 0.3);
+   width: 0;
+   height: 0;
+   overflow: scroll;
+   // background-color: rgba($color: gold, $alpha: 0.3);
    z-index: 9999;
 }
 
@@ -302,9 +346,10 @@ body {
    left: 0 !important;
    width: 100vw !important;
    height: 100vh !important;
-   // background-color: lightgray !important;
-   // border: 5vw solid transparent;
    transition: all 1s cubic-bezier(.25,.8,.25,1);
+   .page {
+      padding: 30px;
+   }
 }
 
 .noshadow {
