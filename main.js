@@ -3,6 +3,23 @@
 
 $(document).ready(function () {
 
+    var link = $(location).attr("href")
+    var whichproject = link.split('#')[1]
+    // alert(whichproject)
+    document.getElementById("citybikes").scrollIntoView();
+
+    
+
+    // $('body,html').animate({
+    //     'scrollTop': 0
+    // }, 200);
+
+    $('body,html').animate({
+        'scrollTop': $( '#'+"citybikes" ).offset().top - ( $(window).height()/2 + $( '#'+"citybikes" ).outerHeight72 )
+    }, 200);
+
+
+
     var isTour = false;
 
     //open interest point description
@@ -56,15 +73,10 @@ $(document).ready(function () {
     var xxx = $('#xxx')
     var face = $('#face')
     var quadratino = $('#quadratino')
-    var tesi = $('#tesi')
     var body = $('body')
     var element = ''
 
     var cont = 0;
-
-    tesi.hover(
-        () => element = 'tesi',
-        () => element = '')
 
     // VARIABILI DI POSIZIONE
     var xmouse = 0
@@ -130,50 +142,78 @@ $(document).ready(function () {
     // })
 
 
-    var cloned = false;
     // AL CLICK
-    tesi.click(() => {
+    $('.project:not(.disabled)').each(function(project) {
+        var cloned
+        
+        $( this ).click(() => {
+    
+            // VARIABLES
+            var yposition = $( this ).offset().top - $(window).scrollTop()
+            var xposition = $( this ).offset().left - $(window).scrollLeft()
+            var projectheight = $( this ).outerHeight()
+            var projectwidth = $( this ).outerWidth()
+    
+            // PREVENT BODY SCROLL
+            body.css('overflow', 'hidden')
+    
+            // CLONING THE PROJECT
+            cloned = $( this )
+                .clone()
+    
+            // ATTRIBUTES
+            cloned
+                .attr('id', 'cloned')
+                .css('position', 'fixed')
+                .css('top', yposition)
+                .css('left', xposition)
+                .css('height', projectheight)
+                .css('width', projectwidth)
+    
+            // BINDING ONCLICK EVENT
+            cloned.click(() => {
+                cloned.animate({
+                    scrollTop: 0
+                }, 300);
+                    cloned.removeClass('fullscreen');
+                    $('#fakebody').css('filter', 'blur(0px)')
+                    $('#fakebody').css('transform', 'scaleX(1)')
+                    // untour();
+    
+                    setTimeout(() => {
+                        cloned.remove()
+                        cloned = false;
+                        $( this ).css('opacity', '1')
+                        body.css('overflow', 'auto')
+    
+                    }, 1000);
+                })
 
-        var yposition = tesi.offset().top - $(window).scrollTop()
-        var xposition = tesi.offset().left - $(window).scrollLeft()
-        var projectheight = tesi.outerHeight()
-        var projectwidth = tesi.outerWidth()
-
-        body.css('overflow', 'hidden')
-
-        cloned = $('#tesi')
-            .clone()
-
-        cloned
-            .attr('id', 'cloned')
-            .css('position', 'fixed')
-            .css('top', yposition)
-            .css('left', xposition)
-            .css('height', projectheight)
-            .css('width', projectwidth)
-
-        cloned.appendTo('body');
-
-        tesi.css('opacity', '0')
-
-        tour()
-
-        cloned.addClass('fullscreen');
-
-        cloned.click(() => {
-            cloned.toggleClass('fullscreen');
-            untour();
-
+            // BINDING ESC KEY
+            $('body').keyup(function(e) {
+                if (e.key === "Escape") { // escape key maps to keycode `27`
+                   // <DO YOUR WORK HERE>
+                   untour();
+               }
+           });
+    
+            // FINALLY APPEND TO BODY
+            cloned.appendTo('body');
+    
+            $( this ).css('opacity', '0')
+            $('#fakebody').css('filter', 'blur(15px)')
+            $('#fakebody').css('transform', 'scaleX(0.95)')
+    
+            // tour()
+    
             setTimeout(() => {
-                cloned.remove()
-                cloned = false;
-                tesi.css('opacity', '1')
-                body.css('overflow', 'auto')
-
-            }, 1000);
+                cloned.addClass('fullscreen');
+            }, 1);
+    
         })
+        
+      });
 
-    })
 
 
 })

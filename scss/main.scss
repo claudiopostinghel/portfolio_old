@@ -2,7 +2,6 @@
 @import 'variables';
 
 * {
-   -webkit-backface-visibility: hidden;
    box-sizing: border-box;
    margin: 0;
    padding: 0;
@@ -13,10 +12,15 @@
    background-color: rgba($color: gold, $alpha: 0.8);
 }
 
-*::-webkit-scrollbar {
+// SCROLLBARS
+::-webkit-scrollbar {
+   display: none; // Safari and Chrome
    width: 0 !important;
    height: 0 !important;
 }
+
+// ----------
+
 
 html {
    min-width: 320px;
@@ -36,8 +40,12 @@ body {
 }
 
 #fakebody {
+   padding: 100px 0;
    max-width: 100vw;
    margin: 0 auto;
+   filter: blur(0px);
+   transform: scaleX(1);
+   transition: all 1s cubic-bezier(.25,.8,.25,1);
 }
 @media only screen and (min-width: 600px) and (max-width: 999px)  {
    #fakebody {
@@ -120,18 +128,12 @@ body {
    filter:
    drop-shadow(0px 10px 0px gold);
    }
-   
-   // #top, #middle, #bottom {
-   //    filter: drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
-   //            drop-shadow( 0 6px 6px rgba(0,0,0,0.23) );
-   // }
 
 }
 
 #workssection {
 
    filter:
-   drop-shadow(0px 10px 0px red)
    drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
    drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
    ;
@@ -183,7 +185,8 @@ body {
 }
 
 .project {
-   border: 1px solid white;
+   cursor: pointer;
+   // border: 1px solid white;
    background-color: gold;
    margin: 0 0 0.5em 0;
 
@@ -197,14 +200,13 @@ body {
    overflow: hidden;
 
    .page[page="2"] {
-      max-height: 0;
-      overflow: hidden;
-      background-color: red;
+      background-color: rgb(236, 90, 32);
    }
 
    .page {
       position: relative;
       margin: 0;
+      min-height: 300px;
       height: 100%;
       width: 100%;
 
@@ -219,6 +221,7 @@ body {
          position: absolute;
          bottom: 0;
          right: 0;
+         padding: 20px;
          h3 {
             font-weight: 900;
             font-size: 3em;
@@ -257,36 +260,6 @@ body {
    ;
 }
 
-.test {
-   min-height: 100px;
-
-   filter:
-   drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
-   drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
-   ;
-
-   margin-top: -50px;
-
-.top {
-   min-height: 65px;
-   background-image: linear-gradient(+4deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
-}
-.middle {
-   // background-color: rgba($color: red, $alpha: 0.3);
-   min-height: 66px;
-   line-height: 66px;
-   transform: rotate(+4deg);
-   margin-top: -33px;
-   margin-bottom: -33px;
-}
-
-.bottom {
-   min-height: 65px;
-   background-image: linear-gradient(+4deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%);
-}
-
-}
-
 #xxx {
    position: fixed;
    top: 0;
@@ -319,26 +292,21 @@ body {
    // left: 0;
 }
 
-#cloned {
-       /* Force Hardware Acceleration in WebKit */
-       -webkit-transform: translateZ(0);
-       -moz-transform: translateZ(0);
-       -ms-transform: translateZ(0);
-       -o-transform: translateZ(0);
-       transform: translateZ(0);
-       -webkit-backface-visibility: hidden;
-       backface-visibility: hidden;
-       /* ------------------------------------- */
-       
+#cloned {       
    position: fixed;
-   display: inline-block;
+   display: inline-block; 
    top: 0;
    left: 0;
    width: 0;
    height: 0;
    overflow: scroll;
    // background-color: rgba($color: gold, $alpha: 0.3);
+   transition: all 1s cubic-bezier(.25,.8,.25,1);
    z-index: 9999;
+
+   /* Force Hardware Acceleration in WebKit */
+   -webkit-transform: translateZ(0);
+   /* ------------------------------------- */
 }
 
 .fullscreen {
@@ -354,5 +322,36 @@ body {
 
 .noshadow {
    filter: drop-shadow( 0 0px 0px rgba(0, 0, 0, 0) ) !important;
-   transition: box-shadow 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
+   transition: all 1s cubic-bezier(.25,.8,.25,1);
+}
+
+.disabled {
+   filter: grayscale(1) !important;
+}
+
+#somemagic {
+   background-color: transparent;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+
+   .fakeproject {
+      background-color: gold;
+      min-height: 300px;
+      min-width: 800px;
+   }
+   
+   .fakeprojectx {
+      min-height: 100vh;
+      min-width: 100vw;
+      transition: all 1s cubic-bezier(.25,.8,.25,1);
+   }
+
 }
