@@ -1,0 +1,60 @@
+// main: main.sass
+/* Me section part */
+
+
+#mesection {
+    filter:
+    drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
+    drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
+    ;
+    
+    width: 100%;
+ 
+    #top {
+       #profilepictures {
+          text-align: center;
+          #face {
+             // margin: 0 auto; // center
+          
+             max-height: 150px;
+             max-width: 150px;
+       
+             // pre-movingface
+             border: 3px solid white;
+             background-color: rgb(231, 231, 231);
+             border-radius: 50%;
+          }
+       }
+    }
+    #middlewrap {
+       background-color: white;
+       padding: 0 3em 0.5em 3em;
+ 
+       #title {
+          text-align: left;
+          h1 {
+             font-weight: 900;
+          }
+       }
+       #socialwrap {
+          height: 2em;
+          .social {
+             margin-right: 2em;
+             height: 2em;
+             opacity: 0.7;
+             float: left;
+             // TODO: fix Behance logo
+          }
+       }
+    }
+    @media only screen and (max-width: 400px) {
+       #middlewrap {
+          padding: 0 1em 0.5em 1em;
+       }
+    }
+    #bottom {
+    filter:
+    drop-shadow(0px 10px 0px gold);
+    }
+ 
+ }

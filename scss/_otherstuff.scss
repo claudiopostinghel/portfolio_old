@@ -1,0 +1,74 @@
+// main: main.sass
+
+/* Diagonal stuff */
+
+
+.cw_up {
+    min-height: 100px;
+    background-image: url('cw_up.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 10000px 100%;
+ }
+ .ccw_up {
+    min-height: 100px;
+    background-image: url('ccw_up.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 10000px 100%;
+ }
+ .cw_down {
+    min-height: 100px;
+    background-image: url('cw_down.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 10000px 100%;
+ }
+ .ccw_down {
+    min-height: 100px;
+    background-image: url('ccw_down.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 10000px 100%;
+ }
+ 
+/* SHADOWs */
+
+
+
+
+#test {
+    position: fixed;
+    top: 312px;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+}
+
+
+#xxx {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100px;
+    min-width: 400px;
+    background-color: rgba($color: red, $alpha: 1.0);
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ #quadratino {
+    position: fixed;
+    min-height: 0px;
+    border: 3px solid red;
+    min-width: 0px;
+    width: 100px;
+    transform-origin: 0 0;
+    background-color: rgba($color: red, $alpha: 0.3);
+    color: white;
+    z-index: 999;
+ }

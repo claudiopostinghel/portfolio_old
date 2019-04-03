@@ -1,0 +1,59 @@
+// main: main.sass
+
+/* Diagonal stuff */
+
+
+#cloned {
+    position: fixed;
+    cursor: auto;
+    overflow-y: scroll;
+    width: 0;
+    height: 0;
+    
+    transition: all 0.7s cubic-bezier(.25,.8,.25,1);
+ }
+ 
+ .fullscreen {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+ 
+    transition: all 0.7s cubic-bezier(.25,.8,.25,1);
+ 
+    [page] {
+       min-height: 60%;
+       padding: 2em 200px;
+       .title {
+          left: 180px;
+       }
+    }
+    * {
+       transition:
+       min-height 0.7s cubic-bezier(.25,.8,.25,1),
+       padding 0.7s cubic-bezier(.25,.8,.25,1),
+       left 0.7s cubic-bezier(.25,.8,.25,1),
+       ;
+    }
+ }
+
+ #xbutton {
+    position: fixed;
+    cursor: pointer;
+    opacity: 0;
+    right: 30px;
+    top: -50px;
+    height: 30px;
+    width: 30px;
+    // background-image: url("..img/close.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 0;
+    z-index: 9999999;
+    transition: all 0.7s cubic-bezier(.25,.8,.25,1);
+    img {
+       opacity: 0.6;
+    }
+ }
+ 
