@@ -3,6 +3,14 @@
 
 $(document).ready(function () {
 
+    // ANDROID BAR ISSUE
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+
     var link = $(location).attr("href")
     var whichproject = link.split('#')[1]
     if (whichproject) {
@@ -70,6 +78,7 @@ $(document).ready(function () {
     var face = $('#face')
     var quadratino = $('#quadratino')
     var body = $('body')
+    var html = $('html')
     var element = ''
 
     var cont = 0;
@@ -141,6 +150,7 @@ $(document).ready(function () {
     function makeFullscreen(el) {
         // 1) PREVENT BODY SCROLL
         body.css('overflow', 'hidden');
+        html.css('overflow', 'hidden');
 
         // 2) CLONING THE PROJECT
         var cloned = el
@@ -177,7 +187,8 @@ $(document).ready(function () {
             cloned.animate({
                 scrollTop: 0
             }, 300);
-            cloned.removeClass('fullscreen');
+            cloned.css('overflow', 'hidden')
+            cloned.removeClass('fullscreen')
             $('#xbutton').css('opacity', '0')
             $('#xbutton').css('top', '-50px')
             // $('#fakebody').css('filter', 'blur(0px)')
@@ -189,6 +200,7 @@ $(document).ready(function () {
                 cloned = false;
                 el.css('opacity', '1')
                 body.css('overflow', 'auto')
+                html.css('overflow', 'auto')
 
             }, 1000);
 
@@ -201,7 +213,7 @@ $(document).ready(function () {
         // BINDING ESC KEY
         $(document).keyup(function (e) { if (e.key === "Escape") { reverse() } });
     }
-    $('.project').each(function () {
+    $('.project:not(.disabled)').each(function () {
         $(this).click(() => { makeFullscreen($(this)) })
     });
 
@@ -210,6 +222,16 @@ $(document).ready(function () {
         }
     });
 
-
+    $('[import]').each(function (el) {
+        var el = $(this)
+        var linkToImport = el.attr("import");
+        console.log(linkToImport);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", linkToImport);
+        xhr.onload = function () {
+            el.append( xhr.responseText )
+        }
+        xhr.send();
+    })
 
 })

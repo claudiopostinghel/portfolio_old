@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Portfolio</title>
-    <meta name="viewport" content="width=425, initial-scale=1">
+    <meta name="viewport" content="width=320, initial-scale=1">
 
     <!-- CSS -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -24,14 +24,19 @@
 
 <body>
 
+
+
     <div id="fakebody">
+        <div id="accessibilitysection" style="opacity: 0;">
+            <!-- BLIND-VERSION -->
+        </div>
 
         <!-- <div id="quadratino"></div> -->
         <!-- <div id="xxx"></div> -->
 
         <div id="mesection">
 
-            <div id="top">
+            <div id="top" class="ccw_up">
                 <div id="profilepictures">
                     <img src="img/profilepicture.png" alt="" id="face">
                 </div>
@@ -54,9 +59,9 @@
                         <a href="https://www.t.me/claudiopostinghel" target="_blank" rel="Telegram">
                             <img class="social" src="img/telegram-logo.svg" alt="Telegram">
                         </a>
-                        <a href="https://www.be.net/claudiopostinghel/" target="_blank" rel="Telegram">
+                        <!-- <a href="https://www.be.net/claudiopostinghel/" target="_blank" rel="Telegram">
                             <img class="social" src="img/behance-logo.svg" alt="Behance">
-                        </a>
+                        </a> -->
                         <a href="https://www.linkedin.com/in/claudiopostinghel" target="_blank" rel="Telegram">
                             <img class="social" src="img/linkedin-logo.svg" alt="LinkedIn">
                         </a>
@@ -65,8 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div id="bottom">
-
+            <div id="bottom" class="cw_down">
             </div>
 
 
@@ -85,7 +89,7 @@
 
         <div id="workssection">
 
-            <div id="top">
+            <div id="top" class="cw_up">
             </div>
 
             <div id="middle">
@@ -98,39 +102,8 @@
 
                         <div class="projects">
 
-                            <div id="tesi" class="project disabled">
-                                <div class="page" page="1">
-                                    <div class="mockup">
-
-                                        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-                                        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-                                        <!-- <section class="cd-product">
-                                            <div id="cd-product-tour" class="cd-product-mockup">
-                                                <img id="image" src="img/cd-app-image.png" alt="Preview image">
-                                                <div class="cd-3d-right-side"></div>
-                                                <div class="cd-3d-bottom-side"></div>
-                                            </div>
-                                        </section> -->
-                                        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-                                        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-
-                                    </div>
-                                    <div class="title">
-                                        <h3>Tesi</h3>
-                                        <div class="tags">
-                                            <div class="tag">Microdesign</div>
-                                            <div class="tag">Research</div>
-                                            <div class="tag">Developing</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="page" page="2">
-                                    Hey
-                                </div>
-                            </div>
-
-                            <div id="citybikes" class="project">
-                                <div class="page" page="1">
+                            <div id="citybikes" class="project" import="citybikes.html">
+                                <div page="1">
                                     <div class="title">
                                         <h3>CityBikes</h3>
                                         <div class="tags">
@@ -140,14 +113,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="page" page="2">
+                            </div>
+
+
+                            <div id="tesi" class="project disabled">
+                                <div page="1">
+
+                                    <div class="title">
+                                        <h3>Tesi</h3>
+                                        <div class="tags">
+                                            <div class="tag">Microdesign</div>
+                                            <div class="tag">Research</div>
+                                            <div class="tag">Developing</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="project">
-                                <div class="page" page="1">
+                            <div class="project disabled">
+                                <div page="1">
                                     <div class="title">
-                                        <h3>GPI internship</h3>
+                                        <h3>GPI Internship</h3>
                                         <div class="tags">
                                             <div class="tag">UX design</div>
                                             <div class="tag">Research</div>
@@ -158,29 +144,70 @@
                             </div>
 
                             <div class="project disabled">
-                                    <div class="page" page="1">
-                                            <div class="title">
-                                                <h3>EatMama</h3>
-                                                <div class="tags">
-                                                    <div class="tag">UX design</div>
-                                                    <div class="tag">Research</div>
-                                                    <div class="tag">Material Design</div>
-                                                </div>
-                                            </div>
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>EatMama</h3>
+                                        <div class="tags">
+                                            <div class="tag">UX design</div>
+                                            <div class="tag">Research</div>
+                                            <div class="tag">Material Design</div>
                                         </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="project disabled">
-                                    <div class="page" page="1">
-                                            <div class="title">
-                                                <h3>UX Challenge 2018</h3>
-                                                <div class="tags">
-                                                    <div class="tag">UX design</div>
-                                                    <div class="tag">Research</div>
-                                                    <div class="tag">Material Design</div>
-                                                </div>
-                                            </div>
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>UX Challenge 2018</h3>
+                                        <div class="tags">
+                                            <div class="tag">UX design</div>
+                                            <div class="tag">Research</div>
+                                            <div class="tag">Material Design</div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Musa</h3>
+                                        <h5>Lean Validation Workshop</h5>
+                                        <div class="tags">
+                                            <div class="tag">Lean Validation</div>
+                                            <div class="tag">...</div>
+                                            <div class="tag">Pitch</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>SmartBottle</h3>
+                                        <h5>Globar Service Jam</h5>
+                                        <div class="tags">
+                                            <div class="tag">UX design</div>
+                                            <div class="tag">Research</div>
+                                            <div class="tag">Material Design</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Eragap</h3>
+                                        <div class="tags">
+                                            <div class="tag">UX design</div>
+                                            <div class="tag">Research</div>
+                                            <div class="tag">Material Design</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -192,7 +219,7 @@
                         <div class="titlewrap">
                             <h1>👨‍💻 Coding skills</h1>
                             <p style="margin-bottom: 0.5em;">
-                                Reasones to code:
+                                Reasons to code:
                                 <ol>
                                     <li>
                                         I love to code ❤️🤖
@@ -205,25 +232,29 @@
                         </div>
 
                         <div class="projects">
-                            <div class="project">
-                                    <div class="page" page="1">
-                                            <div class="title">
-                                                <h3>Bayesian algorithm</h3>
-                                                <div class="tags">
-                                                    <div class="tag">Artificial Intelligence</div>
-                                                    <div class="tag">Python</div>
-                                                    <div class="tag">Sklearn</div>
-                                                </div>
-                                            </div>
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Bayesian algorithm</h3>
+                                        <div class="tags">
+                                            <div class="tag">Artificial Intelligence</div>
+                                            <div class="tag">Python</div>
+                                            <div class="tag">Sklearn</div>
                                         </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="project">
-                                <h3>Linguistica (NLTK)</h3>
-                                <div class="tags">
-                                    <div class="tag">UX design</div>
-                                    <div class="tag">Redesign</div>
-                                    <div class="tag">Material Design</div>
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Linguistica (NLTK)</h3>
+                                        <div class="tags">
+                                            <div class="tag">Artificial Intelligence</div>
+                                            <div class="tag">Python</div>
+                                            <div class="tag">Sklearn</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -235,21 +266,29 @@
                         <h1>🔬 Research</h1>
 
                         <div class="projects">
-                            <div class="project">
-                                <h3>Ciechi e tecnologie</h3>
-                                <div class="tags">
-                                    <div class="tag">UX design</div>
-                                    <div class="tag">Redesign</div>
-                                    <div class="tag">Material Design</div>
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Ciechi e tecnologie</h3>
+                                        <div class="tags">
+                                            <div class="tag">Artificial Intelligence</div>
+                                            <div class="tag">Python</div>
+                                            <div class="tag">Sklearn</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="project">
-                                <h3>Service Design per il CLA</h3>
-                                <div class="tags">
-                                    <div class="tag">UX design</div>
-                                    <div class="tag">Redesign</div>
-                                    <div class="tag">Material Design</div>
+                            <div class="project disabled">
+                                <div page="1">
+                                    <div class="title">
+                                        <h3>Service Design per il CLA</h3>
+                                        <div class="tags">
+                                            <div class="tag">Artificial Intelligence</div>
+                                            <div class="tag">Python</div>
+                                            <div class="tag">Sklearn</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
