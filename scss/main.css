@@ -122,16 +122,16 @@
   background-color: ligthgray;
 }
 
-.project [page]:not([page="1"]) {
-  color: black;
-  background-color: white;
-}
-
 .project [page="1"] {
   background-color: gold;
   z-index: 10;
   -webkit-filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
           filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
+}
+
+.project [page]:not([page="1"]) {
+  color: black;
+  background-color: white;
 }
 
 .project [page] {
@@ -281,7 +281,7 @@
 /* Diagonal stuff */
 .cw_up {
   min-height: 100px;
-  background-image: url("cw_up.svg");
+  background-image: url("deg/cw_up.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 10000px 100%;
@@ -289,7 +289,7 @@
 
 .ccw_up {
   min-height: 100px;
-  background-image: url("ccw_up.svg");
+  background-image: url("deg/ccw_up.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 10000px 100%;
@@ -297,7 +297,7 @@
 
 .cw_down {
   min-height: 100px;
-  background-image: url("cw_down.svg");
+  background-image: url("deg/cw_down.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 10000px 100%;
@@ -305,7 +305,7 @@
 
 .ccw_down {
   min-height: 100px;
-  background-image: url("ccw_down.svg");
+  background-image: url("deg/ccw_down.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 10000px 100%;
