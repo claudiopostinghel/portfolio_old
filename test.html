@@ -1,0 +1,37 @@
+<div id="main">
+
+</div>
+
+<script>
+
+    function w(testo) {
+        var div = document.getElementById('main')
+        div.innerHTML = testo
+    }
+
+    // IMPORTO PAROLE
+
+    var interviste = ""
+    var parole = []
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", 'interviste.txt');
+    xhr.onload = function () {
+        interviste = xhr.responseText
+        for (let index = 0; index < interviste.length; index++) {
+            const lettera = interviste[index];
+            if (lettera ) {
+                interviste[index] = " "
+            }
+        }
+        interviste = interviste.length
+    }
+    xhr.send();
+    
+
+    var intervistePulite = interviste.replace("Microsoft", "W3Schools");
+
+    setTimeout(() => {
+        w(interviste)
+    }, 1000);
+
+</script>

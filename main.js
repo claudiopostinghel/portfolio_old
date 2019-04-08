@@ -14,14 +14,12 @@ $(document).ready(function () {
     var link = $(location).attr("href")
     var whichproject = link.split('#')[1]
     if (whichproject) {
-        $('html, body').animate({
+        $('html').animate({
             scrollTop: $('#' + whichproject).offset().top + $('#' + whichproject).outerHeight() / 2 - $(window).outerHeight() / 2
         }, 700, () => {
             makeFullscreen($('#' + whichproject))
         });
     }
-
-    // });
 
     function x() {
         var isTour = false;
@@ -222,16 +220,16 @@ $(document).ready(function () {
         }
     });
 
-    $('[import]').each(function (el) {
-        var el = $(this)
-        var linkToImport = el.attr("import");
-        console.log(linkToImport);
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", linkToImport);
-        xhr.onload = function () {
-            el.append( xhr.responseText )
-        }
-        xhr.send();
-    })
+        $('[import]').each(function (el) {
+            var el = $(this)
+            var linkToImport = el.attr("import");
+            console.log(linkToImport);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", linkToImport);
+            xhr.onload = function () {
+                el.append( xhr.responseText )
+            }
+            xhr.send();
+        })
 
 })

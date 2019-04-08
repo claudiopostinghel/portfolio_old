@@ -10,16 +10,17 @@
     drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
     ;
  
-    // dev
-    // border: 3px dashed green;
-    // --- dev
- 
     #middlewrap {
        margin-top: -0px;
        padding: 2em;
        background-color: white;
     }
     @media only screen and (max-width: 400px) {
+       #middlewrap {
+          padding: 0 0.2em 0.2em 0.2em;
+       }
+    }
+    @media only screen and (max-width: 600px) {
        #middlewrap {
           padding: 0 0.5em 0.5em 0.5em;
        }
@@ -41,6 +42,18 @@
              margin-bottom: 0em;
           }
        }
+
+       // TITOLO CENTRATO MOBILE
+       @media only screen and (max-width: 600px) {
+         .titlewrap {
+            text-align: center;
+            margin-top: -1.5em;
+            margin-bottom: 0.5em;
+            h1 {
+               margin-bottom: 0em;
+            }
+         }
+       }
  
        .projects {
           padding: 0;
@@ -57,14 +70,18 @@
     width: 100%;
     height: 300px;
     overflow: hidden;
-    // scrollbar-width: none;
     transition: all 0.7s cubic-bezier(.25,.8,.25,1);
 
     [page="1"] {
+       min-height: 100%;
         background-color: gold;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
         z-index: 10;
         filter:
-        // drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
         drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
         ;
      }
@@ -75,36 +92,32 @@
     }
  
     [page] {
-        // border: 3px dotted red;
-       position: relative;
-       margin: 0;
-       min-height: 100%;
-       width: 100%;
- 
+      // FIX FOR ANDROID CHROME
        @supports (-webkit-appearance:none) {
           .os-android & {
             height: calc(100vh - 200px);
           }
         }
  
-       .mockup {
-          height: 100%;
-          display: flex;
-          align-items: center;
-       }
- 
        .title {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          padding: 20px;
+          padding: 10px;
+
+          display: flex;
+          flex-direction: column;
+
           h3 {
              font-weight: 900;
              font-size: 3em;
              text-align: left;
              margin: 0;
+             span {
+                font-size: 0.7em;
+             }
           }
           .tags {
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
              width: 100%;
        
              .tag {
@@ -113,7 +126,8 @@
                 background-color: gray;
                 color: white;
                 border-radius: 1em;
-                margin-left: 0.5em;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
                 padding: 0.2em 0.5em;
              }
           }
@@ -131,8 +145,16 @@
           left 0.7s cubic-bezier(.25,.8,.25,1),
           ;
     }
- 
- 
+   @media only screen and (max-width: 400px) {
+      [page] {
+         
+      }
+   }
+   @media only screen and (max-width: 600px) {
+      [page] {
+         
+      }
+   }
     transition:
     width 0.7s cubic-bezier(.25,.8,.25,1),
     height 0.7s cubic-bezier(.25,.8,.25,1),
@@ -147,25 +169,50 @@
 .disabled {
     cursor: auto;
     filter: grayscale(1) !important;
-    height: 70px;
+    height: 95px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding: 0;
     .tags {
-       visibility: hidden;
+       display: none !important;
     }
     .title {
-       bottom: 0;
-       right: 0;
-       height: 70px;
-       line-height: 70px;
        font-size: 10px;
-       left: 0 !important;
     }
-    .title::before {
+    .title::after {
        content: "Work in progress...";
        font-size: 20px;
-       position: absolute;
-       text-align: right;
-       top: 0;
-       right: 0;
-       margin-right: 1em;
+    }
+ }
+
+//  PROJECT THINGS
+
+ .mockup {
+   //  background-color: red;
+    transform: 
+    rotateX(-10deg)
+    rotateY(-30deg)
+    rotateZ(-10deg)
+    ;
+    
+ }
+
+ .designbrief {
+    margin-left: -10px;
+    border-left: 5px solid gold;
+    font-size: 1.5em;
+   //  text-align: center;
+ }
+
+ .projectintrotable {
+    display: flex;
+    flex-direction: row;
+    * {
+       flex-grow: 1;
+    }
+    li {
+       list-style-type: none;
     }
  }

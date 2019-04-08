@@ -1,0 +1,30 @@
+// main: main.sass
+
+/* Project stuff */
+
+.pagewithvideo {
+    display: flex;
+    flex-direction: row;
+
+    .video {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: red;
+        video {
+            max-height: 60vh;
+        }
+    }
+    
+    .videodesc {
+        flex-grow: 1;
+        // ---
+        background-color: blue;
+        li {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    }
+}
