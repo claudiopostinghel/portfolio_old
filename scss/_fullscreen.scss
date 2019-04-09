@@ -4,13 +4,18 @@
 
 
 #cloned {
-    position: fixed;
-    cursor: auto;
-    overflow-y: scroll;
-    width: 0;
+   background-color: white;
+   position: fixed;
+   cursor: auto;
+   overflow-y: scroll;
+   width: 0;
     height: 0;
     
     transition: all 0.7s cubic-bezier(.25,.8,.25,1);
+ }
+
+ #cloned:last-child {
+   padding-bottom: 0px;
  }
  
  .fullscreen {

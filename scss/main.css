@@ -1,6 +1,7 @@
 /* Coolors Exported Palette - coolors.co/000000-14213d-efc02e-e5e5e5-ffffff */
 /* Colors */
 /* Me section part */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 #mesection {
   -webkit-filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.19)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
           filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.19)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
@@ -288,6 +289,7 @@
 
 /* Diagonal stuff */
 #cloned {
+  background-color: white;
   position: fixed;
   cursor: auto;
   overflow-y: scroll;
@@ -295,6 +297,10 @@
   height: 0;
   -webkit-transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#cloned:last-child {
+  padding-bottom: 0px;
 }
 
 .fullscreen {
@@ -457,24 +463,70 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: red;
 }
 
 .pagewithvideo .video video {
   max-height: 60vh;
+  -webkit-filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.19)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
+          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.19)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.23));
+}
+
+.pagewithvideo .video .mockup {
+  -webkit-transform: perspective(400px) rotateY(10deg);
+          transform: perspective(400px) rotateY(10deg);
+}
+
+.pagewithvideo .video .slide {
+  -webkit-transform: perspective(400px) rotateY(5deg);
+          transform: perspective(400px) rotateY(5deg);
 }
 
 .pagewithvideo .videodesc {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
 }
 
 .pagewithvideo .videodesc li {
   position: relative;
   top: 0;
   left: 0;
+}
+
+[page="2"] .pagewithvideo, [page="4"] .pagewithvideo, [page="6"] .pagewithvideo, [page="8"] .pagewithvideo, [page="10"] .pagewithvideo {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+[page="2"] .pagewithvideo .mockup, [page="4"] .pagewithvideo .mockup, [page="6"] .pagewithvideo .mockup, [page="8"] .pagewithvideo .mockup, [page="10"] .pagewithvideo .mockup {
+  -webkit-transform: perspective(400px) rotateY(-10deg);
+          transform: perspective(400px) rotateY(-10deg);
+}
+
+[page="2"] .pagewithvideo .slide, [page="4"] .pagewithvideo .slide, [page="6"] .pagewithvideo .slide, [page="8"] .pagewithvideo .slide, [page="10"] .pagewithvideo .slide {
+  -webkit-transform: perspective(400px) rotateY(-5deg);
+          transform: perspective(400px) rotateY(-5deg);
+}
+
+[page="2"] .videodesc, [page="4"] .videodesc, [page="6"] .videodesc, [page="8"] .videodesc, [page="10"] .videodesc {
+  text-align: right;
+}
+
+.goup {
+  margin-top: -100px;
 }
 
 a {
@@ -490,6 +542,7 @@ a:hover {
 }
 
 * {
+  font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;

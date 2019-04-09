@@ -5,6 +5,7 @@
 @import 'fullscreen';
 @import 'otherstuff';
 @import 'project';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 a {
    color: black;
@@ -16,6 +17,7 @@ a:hover {
 }
 
 * {
+   font-family: 'Roboto', sans-serif;
    box-sizing: border-box;
    margin: 0;
    padding: 0;

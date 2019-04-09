@@ -11,20 +11,51 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: red;
         video {
             max-height: 60vh;
+
+            filter:
+            drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
+            drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
+            ;
+        }
+        .mockup {
+            transform: perspective(400px) rotateY(10deg);
+        }
+        .slide {
+            transform: perspective(400px) rotateY(5deg);
         }
     }
     
     .videodesc {
         flex-grow: 1;
-        // ---
-        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
         li {
             position: relative;
             top: 0;
             left: 0;
         }
     }
+}
+
+[page="2"], [page="4"], [page="6"], [page="8"], [page="10"] {
+    .pagewithvideo {
+        flex-direction: row-reverse;
+        .mockup {
+            transform: perspective(400px) rotateY(-10deg);
+        }
+        .slide {
+            transform: perspective(400px) rotateY(-5deg);
+        }
+    }
+    .videodesc {
+        text-align: right;
+    }
+}
+
+.goup {
+    margin-top: -100px;
 }

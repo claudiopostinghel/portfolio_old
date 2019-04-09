@@ -1,0 +1,62 @@
+
+
+<div id="bodyy">
+    
+    <div id="dispositivo"> 
+        <img id="sopra" src="insta/sopra.jpg" alt="">
+        <div class="mezzo">
+
+            <div class="foto"></div>
+            <div class="foto"></div>
+            <div class="foto"></div>
+            <div class="foto"></div>
+            <div class="foto"></div>
+            <div class="foto"></div>
+            <div class="foto"></div>
+            
+        </div>
+        <img id="sotto" src="insta/sotto.jpg" alt="">
+    </div>
+
+</div>
+
+
+<style>
+
+#dispositivo {
+    margin: 0 auto;
+    max-width: 500px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#sopra {
+    width: 500px;
+    height: 722.5px;
+}
+#sotto {
+    width: 500px;
+    height: 60.55px;
+}
+
+.foto {
+    box-sizing: border-box;
+    float: left;
+    width: 166px;
+    height: 166px;
+    border: 2px solid white;
+    
+    background-size: 100% auto;
+    background-position: 50% 50%;
+}
+
+.foto:nth-child(1) { background-image: url('insta/1.png'); }
+.foto:nth-child(2) { background-image: url('insta/2.png'); }
+.foto:nth-child(3) { background-image: url('insta/3.png'); }
+.foto:nth-child(4) { background-image: url('insta/4.png'); }
+.foto:nth-child(5) { background-image: url('insta/5.png'); }
+.foto:nth-child(6) { background-image: url('insta/6.png'); }
+
+</style>

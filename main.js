@@ -162,7 +162,7 @@ $(document).ready(function () {
             .css('width', el.outerWidth())
             .css('height', el.outerHeight()) // JUST IN CASE
 
-        // 99) APPEND AND APPLY FULLSCREEN
+        // 6) APPEND AND APPLY FULLSCREEN
         cloned.appendTo('body')
         setTimeout(() => {
             cloned.addClass('fullscreen');
@@ -171,6 +171,17 @@ $(document).ready(function () {
                 $('#xbutton').css('top', '30px')
             }, 200);
         }, 100);
+
+        // 7) LOADING CONTENT
+        var linkToImport = cloned.attr("import");
+        console.log(linkToImport);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", linkToImport);
+        xhr.onload = function () {
+            cloned.append(xhr.responseText)
+        }
+        xhr.send();
+
 
         // $('#somemagic').show(100, () => {
         //     console.log(5);
@@ -220,16 +231,16 @@ $(document).ready(function () {
         }
     });
 
-        $('[import]').each(function (el) {
-            var el = $(this)
-            var linkToImport = el.attr("import");
-            console.log(linkToImport);
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", linkToImport);
-            xhr.onload = function () {
-                el.append( xhr.responseText )
-            }
-            xhr.send();
-        })
+    // $('[import]').each(function (el) {
+    //     var el = $(this)
+    //     var linkToImport = el.attr("import");
+    //     console.log(linkToImport);
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open("GET", linkToImport);
+    //     xhr.onload = function () {
+    //         el.append( xhr.responseText )
+    //     }
+    //     xhr.send();
+    // })
 
 })
