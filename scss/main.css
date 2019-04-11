@@ -256,6 +256,60 @@
   font-size: 20px;
 }
 
+.otherproject {
+  margin: 0 0 0.5em 0;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: gold;
+  -webkit-filter: grayscale(1) !important;
+          filter: grayscale(1) !important;
+  height: 70px;
+  line-height: 70px;
+}
+
+.otherproject h3 {
+  margin-left: 0.5em;
+  line-height: 70px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.otherproject h3 span {
+  font-size: 0.7em;
+}
+
+.otherproject .expandarrow {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid gray;
+  margin-top: -7px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.otherproject .rotated {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#otherprojectmaincontent {
+  overflow: hidden;
+  max-height: auto;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.contracted {
+  max-height: 0;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
 .mockup {
   -webkit-transform: rotateX(-10deg) rotateY(-30deg) rotateZ(-10deg);
           transform: rotateX(-10deg) rotateY(-30deg) rotateZ(-10deg);
@@ -504,24 +558,24 @@
   left: 0;
 }
 
-.videonotherigth .pagewithvideo {
+[page="2"] .pagewithvideo, [page="4"] .pagewithvideo, [page="6"] .pagewithvideo, [page="8"] .pagewithvideo, [page="10"] .pagewithvideo {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
-.videonotherigth .pagewithvideo .mockup {
+[page="2"] .pagewithvideo .mockup, [page="4"] .pagewithvideo .mockup, [page="6"] .pagewithvideo .mockup, [page="8"] .pagewithvideo .mockup, [page="10"] .pagewithvideo .mockup {
   -webkit-transform: perspective(400px) rotateY(-10deg);
           transform: perspective(400px) rotateY(-10deg);
 }
 
-.videonotherigth .pagewithvideo .slide {
+[page="2"] .pagewithvideo .slide, [page="4"] .pagewithvideo .slide, [page="6"] .pagewithvideo .slide, [page="8"] .pagewithvideo .slide, [page="10"] .pagewithvideo .slide {
   -webkit-transform: perspective(400px) rotateY(-5deg);
           transform: perspective(400px) rotateY(-5deg);
 }
 
-.videonotherigth .videodesc {
+[page="2"] .videodesc, [page="4"] .videodesc, [page="6"] .videodesc, [page="8"] .videodesc, [page="10"] .videodesc {
   text-align: right;
 }
 
