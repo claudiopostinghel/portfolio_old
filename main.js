@@ -155,13 +155,16 @@ $(document).ready(function () {
 
     // AL CLICK
     var closeCurrent = false
+    var cloned = false
+    var clonedElement = false
     function makeFullscreen(el) {
         // 1) PREVENT BODY SCROLL
         body.css('overflow', 'hidden');
         html.css('overflow', 'hidden');
 
         // 2) CLONING THE PROJECT
-        var cloned = el
+        clonedElement = el
+        cloned = el
             .clone()
 
         // 4) STYLING
@@ -216,15 +219,16 @@ $(document).ready(function () {
 
             setTimeout(() => {
                 cloned.remove()
-                cloned = false;
                 el.css('opacity', '1')
                 body.css('overflow', 'auto')
                 html.css('overflow', 'auto')
-
+                cloned = false
+                clonedElement = false
             }, 1000);
 
             $('#xbutton').unbind()
             $(document).unbind()
+
         }
         closeCurrent = function () {
             reverse()
@@ -239,6 +243,14 @@ $(document).ready(function () {
     $('.project:not(.disabled)').each(function () {
         var project = $(this)
         project.click(() => { makeFullscreen(project) })
+    });
+
+    $( window ).resize(function() {
+        $( cloned )
+        .css('left', clonedElement.offset().left)
+        .css('top', clonedElement.offset().top - $(window).scrollTop())
+        .css('width', clonedElement.outerWidth())
+        .css('height', clonedElement.outerHeight()) // JUST IN CASE
     });
 
 })
