@@ -11,15 +11,24 @@ $(document).ready(function () {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
 
-    var link = $(location).attr("href")
-    var whichproject = link.split('#')[1]
-    if (whichproject) {
-        $('html').animate({
-            scrollTop: $('#' + whichproject).offset().top + $('#' + whichproject).outerHeight() / 2 - $(window).outerHeight() / 2
-        }, 700, () => {
-            makeFullscreen($('#' + whichproject))
-        });
+    function goToProject(whichproject) {
+        if (whichproject) {
+            $('html').animate({
+                scrollTop: $('#' + whichproject).offset().top + $('#' + whichproject).outerHeight() / 2 - $(window).outerHeight() / 2
+            }, 700, () => {
+                makeFullscreen($('#' + whichproject))
+            });
+        }
     }
+    // function goToProjectSamePage(projectName) {
+    //     if (closeCurrent) {
+    //         closeCurrent()
+    //         setTimeout(() => {
+    //             goToProject( projectName )
+    //         }, 700);
+    //     }
+    // }
+    goToProject( $(location).attr("href").split('#')[1] )
 
     function x() {
         var isTour = false;
@@ -145,6 +154,7 @@ $(document).ready(function () {
     // })
 
     // AL CLICK
+    var closeCurrent = false
     function makeFullscreen(el) {
         // 1) PREVENT BODY SCROLL
         body.css('overflow', 'hidden');
@@ -216,31 +226,19 @@ $(document).ready(function () {
             $('#xbutton').unbind()
             $(document).unbind()
         }
+        closeCurrent = function () {
+            reverse()
+        }
 
         // BINDING XBUTTON
         $('#xbutton').click(reverse)
         // BINDING ESC KEY
         $(document).keyup(function (e) { if (e.key === "Escape") { reverse() } });
     }
+
     $('.project:not(.disabled)').each(function () {
-        $(this).click(() => { makeFullscreen($(this)) })
+        var project = $(this)
+        project.click(() => { makeFullscreen(project) })
     });
-
-    $(document).keyup(function (e) {
-        if (e.key === "Escape") {
-        }
-    });
-
-    // $('[import]').each(function (el) {
-    //     var el = $(this)
-    //     var linkToImport = el.attr("import");
-    //     console.log(linkToImport);
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open("GET", linkToImport);
-    //     xhr.onload = function () {
-    //         el.append( xhr.responseText )
-    //     }
-    //     xhr.send();
-    // })
 
 })

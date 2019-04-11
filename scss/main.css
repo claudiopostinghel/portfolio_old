@@ -504,24 +504,24 @@
   left: 0;
 }
 
-[page="2"] .pagewithvideo, [page="4"] .pagewithvideo, [page="6"] .pagewithvideo, [page="8"] .pagewithvideo, [page="10"] .pagewithvideo {
+.videonotherigth .pagewithvideo {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
-[page="2"] .pagewithvideo .mockup, [page="4"] .pagewithvideo .mockup, [page="6"] .pagewithvideo .mockup, [page="8"] .pagewithvideo .mockup, [page="10"] .pagewithvideo .mockup {
+.videonotherigth .pagewithvideo .mockup {
   -webkit-transform: perspective(400px) rotateY(-10deg);
           transform: perspective(400px) rotateY(-10deg);
 }
 
-[page="2"] .pagewithvideo .slide, [page="4"] .pagewithvideo .slide, [page="6"] .pagewithvideo .slide, [page="8"] .pagewithvideo .slide, [page="10"] .pagewithvideo .slide {
+.videonotherigth .pagewithvideo .slide {
   -webkit-transform: perspective(400px) rotateY(-5deg);
           transform: perspective(400px) rotateY(-5deg);
 }
 
-[page="2"] .videodesc, [page="4"] .videodesc, [page="6"] .videodesc, [page="8"] .videodesc, [page="10"] .videodesc {
+.videonotherigth .videodesc {
   text-align: right;
 }
 
