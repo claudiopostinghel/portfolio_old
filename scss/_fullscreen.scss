@@ -8,10 +8,10 @@
    position: fixed;
    cursor: auto;
    overflow-y: scroll;
-   width: 0;
-    height: 0;
+
+   -webkit-overflow-scrolling: touch;
     
-    transition: all 0.7s cubic-bezier(.25,.8,.25,1);
+   transition: all 0.7s cubic-bezier(.25,.8,.25,1);
  }
 
  #cloned:last-child {
@@ -24,7 +24,7 @@
     width: 100vw !important;
     height: 100vh !important; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
- 
+
     transition: all 0.7s cubic-bezier(.25,.8,.25,1);
     [page="1"] {
       min-height: 60%;
@@ -44,6 +44,7 @@
        ;
     }
  }
+
  @media only screen and (max-width: 400px) {
     .fullscreen {
        [page] {

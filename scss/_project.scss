@@ -13,10 +13,9 @@
         align-content: center;
         video {
             max-height: 60vh;
-
-            filter:
-            drop-shadow( 0 10px 20px rgba(0,0,0,0.19) )
-            drop-shadow( 0 6px 6px rgba(0,0,0,0.23) )
+            box-shadow: 
+             0 10px 20px rgba(0,0,0,0.19) 
+             0 6px 6px rgba(0,0,0,0.23) 
             ;
         }
         .mockup {
